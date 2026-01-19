@@ -8,11 +8,11 @@ const App: React.FC = () => {
   const [hasStarted, setHasStarted] = useState(false);
 
   // Video Source (Replace with your actual video.mp4 if preferred)
-  const VIDEO_URL = "https://assets.mixkit.co/videos/preview/mixkit-stars-in-the-night-sky-during-a-solar-eclipse-43588-large.mp4";
+  const VIDEO_URL = "video.mp4";
   
   // WhatsApp Configuration
   const WHATSAPP_NUMBER = "60174599265"; 
-  const WHATSAPP_MESSAGE = "Hi, I would like to ask for more information about Gold-G Jeli Gamat. 你好，我想咨询 Gold-G Jeli Gamat 的更多详情。";
+  const WHATSAPP_MESSAGE = "Hi, I would like to ask for more information about Gold-G Jeli Gamat.";
 
   const handleVideoEnd = useCallback(() => {
     setIsVideoEnded(true);
