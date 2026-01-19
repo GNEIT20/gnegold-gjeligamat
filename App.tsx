@@ -7,8 +7,8 @@ const App: React.FC = () => {
   const [isVideoEnded, setIsVideoEnded] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
 
-  // High-compatibility video link
-  const VIDEO_URL = "https://assets.mixkit.co/videos/preview/mixkit-stars-in-the-night-sky-during-a-solar-eclipse-43588-large.mp4";
+  // Using a very stable sample video URL
+  const VIDEO_URL = "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
   
   // WhatsApp Configuration
   const WHATSAPP_NUMBER = "60174599265"; 
@@ -31,15 +31,15 @@ const App: React.FC = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center font-['Inter']">
       {!hasStarted ? (
-        <div className="z-50 text-center px-6 animate-in fade-in zoom-in duration-700">
+        <div className="z-50 text-center px-6 animate-in fade-in duration-1000">
           {/* Logo Section */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-yellow-600 to-amber-400 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+          <div className="mb-10 flex justify-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-yellow-500/10 rounded-full blur-3xl"></div>
               <img 
                 src="logo.png" 
                 alt="Gold-G" 
-                className="relative w-28 h-28 md:w-36 md:h-36 object-contain rounded-full bg-white/5 p-3 border border-white/10 shadow-2xl"
+                className="relative w-24 h-24 md:w-32 md:h-32 object-contain rounded-full border border-white/10 shadow-2xl bg-zinc-900/50 p-2"
                 onError={(e) => {
                   e.currentTarget.src = "https://ui-avatars.com/api/?name=Gold+G&background=d4af37&color=fff&size=128";
                 }}
@@ -48,27 +48,31 @@ const App: React.FC = () => {
           </div>
 
           <div className="mb-12 space-y-6">
-            <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-yellow-500 to-amber-700">
-                Gold-G Jeli Gamat
+            <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-yellow-400 to-amber-700">
+                Gold-G
               </span>
+              <br />
+              <span className="text-2xl md:text-4xl tracking-[0.1em] text-zinc-400">Jeli Gamat</span>
             </h1>
             
-            <div className="space-y-2">
-              <p className="text-zinc-200 text-lg md:text-2xl font-semibold tracking-wide">Cara Pengesahan & Tuntutan Produk</p>
-              <p className="text-zinc-400 text-sm md:text-lg italic font-light">Product Verification & Redemption</p>
-              <p className="text-zinc-300 text-lg md:text-2xl font-medium">产品正品验证与领取</p>
+            <div className="space-y-4 max-w-sm mx-auto">
+              <div className="h-px w-12 bg-yellow-600 mx-auto opacity-50"></div>
+              <div className="space-y-2">
+                <p className="text-zinc-200 text-lg md:text-xl font-bold tracking-wide">Cara Pengesahan & Tuntutan</p>
+                <p className="text-zinc-500 text-xs md:text-sm italic font-light">Verification & Redemption</p>
+                <p className="text-zinc-300 text-lg md:text-xl font-medium">产品正品验证与领取</p>
+              </div>
             </div>
           </div>
           
           <button 
             onClick={startExperience}
-            className="group relative inline-flex items-center px-14 py-6 font-black text-white transition-all duration-500 bg-gradient-to-br from-yellow-700 to-amber-900 rounded-full hover:from-yellow-500 hover:to-amber-700 hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(180,140,0,0.4)] border border-yellow-500/20"
+            className="group relative inline-flex items-center px-12 py-5 font-black text-white transition-all duration-300 bg-zinc-900 rounded-full hover:scale-105 active:scale-95 border border-yellow-500/30 overflow-hidden"
           >
-            <span className="tracking-[0.2em]">WATCH NOW</span>
-            <div className="ml-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-              <i className="fa-solid fa-play text-sm translate-x-0.5"></i>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-700/20 to-amber-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <span className="relative tracking-[0.3em] text-xs">WATCH VIDEO</span>
+            <i className="fa-solid fa-chevron-right relative ml-4 text-[10px] text-yellow-500 group-hover:translate-x-1 transition-transform"></i>
           </button>
         </div>
       ) : (
