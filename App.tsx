@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   // You can replace this URL with your actual video hosted on GitHub or a CDN
   const VIDEO_URL = "video.mp4";
-  const WHATSAPP_NUMBER = "+60174599265"; // REPLACE WITH YOUR NUMBER
+  const WHATSAPP_NUMBER = "60174599265"; // REPLACE WITH YOUR NUMBER
   const WHATSAPP_MESSAGE = "Hi, I would like to ask for more information. 你好，我想咨询更多详情。";
 
   const handleVideoEnd = useCallback(() => {
